@@ -22,4 +22,20 @@ public class GaragemService {
         List<Veiculo> result = garagemRepository.findAll();
         return result;
     }
+    
+    /**
+     * Retorno DTO Garagem filtrado por cidade.
+     * @param id
+     * @param 
+     * @return
+     */
+    public List<Veiculo> findById(long id) {
+        List<Veiculo> result = garagemRepository.findById(id);
+        return result;
+    }
+    
+    public List<Veiculo> findByColorIgnoreCase(String cor) {
+        List<Veiculo> result = garagemRepository.findByCorIgnoreCase(cor);
+        return result;
+    }
 }

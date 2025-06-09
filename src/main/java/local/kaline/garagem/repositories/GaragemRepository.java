@@ -1,6 +1,7 @@
 
 package local.kaline.garagem.repositories;
 
+import java.util.List;
 import local.kaline.garagem.entities.Veiculo;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -10,4 +11,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface GaragemRepository extends JpaRepository<Veiculo, Long> {
     
+    List<Veiculo> findById( long id);
+    List<Veiculo> findByCorIgnoreCase (String cor);
 }
