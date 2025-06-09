@@ -53,10 +53,12 @@ public class GaragemController {
     @GetMapping("/garagem/color/{cor}")
     public List<Veiculo> findByColorIgnoreCase(@PathVariable String cor) {
         List<Veiculo> result = garagemService.findByColorIgnoreCase(cor);
-        
-       /** if (result.isEmpty()) {
-            //Ops.. lista vazia.
-            //notFound devolve 404 **/
             return result;
         }
+   
+    @GetMapping("/garagem/year/{ano}")
+    public List<Veiculo> findByAno(@PathVariable long ano) {
+        List<Veiculo> result = garagemService.findByAno(ano);
+            return result;
+    
     }

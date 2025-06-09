@@ -38,4 +38,9 @@ public class GaragemService {
         List<Veiculo> result = garagemRepository.findByCorIgnoreCase(cor);
         return result;
     }
+    
+    public List<Veiculo> findByAno(long ano) {
+        List<Veiculo> result = garagemRepository.findByAno(ano);
+        return result;
+    }
 }
