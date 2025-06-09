@@ -60,5 +60,6 @@ public class GaragemController {
     public List<Veiculo> findByAno(@PathVariable long ano) {
         List<Veiculo> result = garagemService.findByAno(ano);
             return result;
-    
     }
+}
+  

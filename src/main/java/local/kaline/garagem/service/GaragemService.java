@@ -2,6 +2,7 @@
 package local.kaline.garagem.service;
 
 import java.util.List;
+import local.kaline.garagem.DTO.VeiculoDTO;
 import local.kaline.garagem.entities.Veiculo;
 import local.kaline.garagem.repositories.GaragemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +30,11 @@ public class GaragemService {
      * @param 
      * @return
      */
-    public List<Veiculo> findById(long id) {
-        List<Veiculo> result = garagemRepository.findById(id);
-        return result;
+    public List<VeiculoDTO> findById(long id) {
+        List<Veiculo> resultVeiculo = garagemRepository.findById(id);
+        
+        List<VeiculoDTO> resultDTO = resultVeiculo.stream().map(x -> new VeiculoDTO(x)).toList();
+        return resultDTO;
     }
     
     public List<Veiculo> findByColorIgnoreCase(String cor) {
